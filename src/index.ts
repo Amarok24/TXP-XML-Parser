@@ -1,3 +1,11 @@
+/**
+  * @description TXP - Tiny XML Parser written in TypeScript.
+  * @author Jan Prazak
+  * @website https://github.com/Amarok24/
+  * @license MIT
+*/
+
+
 import { TextFileReader } from "./TextFileReader.ts";
 import { XmlParser } from "./XmlParser.ts";
 
