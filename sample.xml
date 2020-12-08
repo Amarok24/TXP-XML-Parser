@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <JobBatch Version="1.0" Timestamp="2020-11-18T12:08:50Z">
 	<Job Version="1.1" RequisitionNumber="11651" InternalID="10921047">
 		<Company>
 			<Name>BlaCompany ABC</Name>
-			<Description />
+			<Description text="dummy description" />
 			<Department>
 				Deutsche Post AG
 				<Test>Bla</Test>

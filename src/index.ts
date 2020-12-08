@@ -10,6 +10,7 @@ import { TextFileReader } from "./TextFileReader.ts";
 import { XmlParser } from "./XmlParser.ts";
 
 const offlineFile = "sample.xml";
+//const offlineFile = "jobs_truncated.xml";
 
 let textFileReader = new TextFileReader(offlineFile);
 const readSuccess = textFileReader.Fetch();

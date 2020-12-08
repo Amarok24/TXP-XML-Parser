@@ -1,4 +1,4 @@
-import { XmlNode } from "./XmlNode.ts";
+import { KeyAndValue, XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
 import { StringMethods } from "./StringMethods.ts";
 import { NodeDetails } from "./NodeDetails.ts";
@@ -80,6 +80,31 @@ class XmlParser
 	}
 
 
+	/**
+	 * @returns Index after <?xml ... header part. 0 if no xml header available.
+	 */
+	private GetIndexAfterXmlHeader(): number
+	{
+		let i: number = 0;
+
+		if (!this.xmlString.startsWith("<?xml"))
+		{
+			return i;
+			// TODO: handle utf-8 BOM
+		}
+
+		for (i = 0; i < this.xmlString.length; i++)
+		{
+			if (this.xmlString[i] === ">")
+			{
+				break;
+			}
+		}
+
+		return i + 1;
+	}
+
+
 	private GetNextElement(startIndex: number): INodeBoundary
 	{
 		let nodeBoundary: INodeBoundary = {
@@ -99,7 +124,7 @@ class XmlParser
 			if (this.xmlString[i] === "<")
 			{
 				if (this.xmlString[i + 1] === "!")
-				{
+				{	// "<!" detected, which should be a CDATA section
 					continue;
 				}
 
@@ -132,6 +157,10 @@ class XmlParser
 
 		nodeBoundary.textBefore = nodeBoundary.textBefore.trim();
 
+		// FIXME: if node content has a CDATA section then .textBefore is like:
+		// ![CDATA[Post & Paket Deutschland]]>
+		// so the leading "<" is missing
+
 		return nodeBoundary;
 	}
 
@@ -150,6 +179,9 @@ class XmlParser
 		let xmlWalkthroughIndex: number = 0;
 		let nodeString: INodeBoundary | null = null;
 		let nodeName: string = "";
+		let attributes: KeyAndValue[] | null;
+
+		xmlWalkthroughIndex = this.GetIndexAfterXmlHeader();
 
 		try
 		{
@@ -159,7 +191,6 @@ class XmlParser
 
 				if (nodeString.nodeText === "")
 				{
-					console.log("nodeString.nodeText empty");
 					break;
 				}
 
@@ -177,16 +208,14 @@ class XmlParser
 
 				if (nodeString.nodeText.endsWith("/"))
 				{	// If node is a self-closing node.
-					//console.log("ends with /");
-					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", null);
+					attributes = StringMethods.ExtractAttributes(nodeString.nodeText);
+					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", attributes);
 					this.tree.GoToParent();
-
 				}
 				else if (!nodeString.nodeText.startsWith("/"))
 				{	// If node is NOT a closing node but an opening node.
-					//console.log("starts with /");
-					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", null);
-
+					attributes = StringMethods.ExtractAttributes(nodeString.nodeText);
+					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", attributes);
 				}
 				else
 				{

@@ -1,3 +1,5 @@
+import { KeyAndValue } from "./XmlNode.ts";
+
 export { StringMethods };
 
 
@@ -14,9 +16,26 @@ class StringMethods
 
 		throw new Error("ExtractNodeName failed.");
 	}
-}
 
-// TODO: attribute extraction
+	public static ExtractAttributes(s: string): KeyAndValue[] | null
+	{
+		let r = new RegExp(/(\w+)="([\S\s]*?)"/g);
+		let arr: KeyAndValue[] = [];
+		let matches = [...s.matchAll(r)];
+
+		if (matches.length === 0)
+		{
+			return null;
+		}
+
+		for (const match of matches)
+		{
+			arr.push([match[1], match[2]]);
+		}
+
+		return arr;
+	}
+}
 
 	/*
 
