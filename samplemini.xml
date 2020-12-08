@@ -1,0 +1,31 @@
+<Job Version="1.1" RequisitionNumber="11651" InternalID="10921047">
+		<Company>
+			<Name>BlaCompany ABC</Name>
+			<Description />
+			<Department>
+				Deutsche Post AG
+				<Test>Bla</Test>
+			</Department>
+			<Address>
+				<City>Hamburg</City>
+				<PostalCode />
+			</Address>
+		</Company>
+		<Position>
+			<Title>Postbote für Pakete und Briefe</Title>
+			<Classification>
+				<Type Code="CONTRACT" />
+				<Time Code="FULLTIME" />
+			</Classification>
+			<Compensation>
+				<Range>
+					<Minimum>0</Minimum>
+					<Maximum>4</Maximum>
+				</Range>
+			</Compensation>
+			<TravelPercentage>0</TravelPercentage>
+			<TelecommutePercentage>0</TelecommutePercentage>
+			<Function Code="49909200" />
+			<Industry Code="53" />
+		</Position>
+	</Job>
