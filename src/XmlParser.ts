@@ -35,14 +35,10 @@ class XmlParser
 
 
 	/**
-	 * Interactive traversal of the tree. Control through user input in console.
+	 * @description Interactive traversal of the tree. Control through user input in console. No error checks at the moment. Mainly for testing purposes.
 	 */
 	public Interactive(): void
 	{
-		//console.log(this.xmlString[1]);
-		//console.dir(this.tree);
-		let willContinue = true;
-
 		const cStyleBlue = "background-color:steelblue;color:white";
 		const cStyleRed = "background-color:darkred;color:white";
 		console.log("%cEntering interactive mode", cStyleBlue);
@@ -50,7 +46,7 @@ class XmlParser
 		this.tree.GoToRoot();
 		console.log("Current position: root node. Let's begin...");
 
-		while (willContinue)
+		while (true)
 		{
 			NodeDetails.Display(this.tree.nodePointer);
 			let answer: string = prompt("\nType in child index or 'p' for parent or 'x' for exit:", "x")!;
@@ -69,7 +65,6 @@ class XmlParser
 			}
 			else if (answer === "x")
 			{
-				willContinue = false;
 				break;
 			}
 			else
