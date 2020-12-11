@@ -1,6 +1,6 @@
 import { KeyAndValue, XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
-import { StringMethods } from "./StringMethods.ts";
+import { XmlStringMethods } from "./XmlStringMethods.ts";
 import { NodeDetails } from "./NodeDetails.ts";
 
 export { XmlParser };
@@ -35,7 +35,7 @@ class XmlParser
 
 
 	/**
-	 * @description Interactive traversal of the tree. Control through user input in console. No error checks at the moment. Mainly for testing purposes.
+	 * Interactive traversal of the tree. Control through user input in console. No error checks at the moment. Mainly for testing purposes.
 	 */
 	public Interactive(): void
 	{
@@ -81,16 +81,28 @@ class XmlParser
 
 
 	/**
-	 * @returns Index after <?xml ... header part. 0 if no xml header available.
+	 * Makes sure the main XML string processing starts at the right index.
+	 * This method skips UTF-8 BOM (if available) and also the <?xml ... ?> header.
+	 * @returns Index after UTF-8 BOM and <?xml ... header part.
 	 */
-	private GetIndexAfterXmlHeader(): number
+	private GetStartIndexOfXml(): number
 	{
+		const javascriptBomString = "\ufeff";
+		// UTF-8 BOM in textfiles is 0xEFBBBF, but a string in JS contains only 0xFEFF
+		const xmlStart = "<?xml";
+		const bomAndXmlStart = javascriptBomString + xmlStart;
+
 		let i: number = 0;
 
-		if (!this.xmlString.startsWith("<?xml"))
+		if (this.xmlString.startsWith(javascriptBomString))
+		{
+			console.log("XML input file contains UTF-8 BOM");
+		}
+
+		if ( !(this.xmlString.startsWith("<?xml") || this.xmlString.startsWith(bomAndXmlStart)) )
 		{
 			return i;
-			// TODO: handle utf-8 BOM
+			// TODO: handle utf-8 BOM ??
 		}
 
 		for (i = 0; i < this.xmlString.length; i++)
@@ -104,7 +116,10 @@ class XmlParser
 		return i + 1;
 	}
 
-
+	/**
+	 * 
+	 * @param startIndex Index of private xmlString.
+	 */
 	private GetNextElement(startIndex: number): INodeBoundary
 	{
 		let nodeBoundary: INodeBoundary = {
@@ -125,6 +140,7 @@ class XmlParser
 			{
 				if (this.xmlString[i + 1] === "!")
 				{	// "<!" detected, which should be a CDATA section
+					nodeBoundary.textBefore += this.xmlString[i];
 					continue;
 				}
 
@@ -155,11 +171,7 @@ class XmlParser
 			}
 		}
 
-		nodeBoundary.textBefore = nodeBoundary.textBefore.trim();
-
-		// FIXME: if node content has a CDATA section then .textBefore is like:
-		// ![CDATA[Post & Paket Deutschland]]>
-		// so the leading "<" is missing
+		nodeBoundary.textBefore = XmlStringMethods.RemoveCDataWrapper(nodeBoundary.textBefore);
 
 		return nodeBoundary;
 	}
@@ -181,7 +193,7 @@ class XmlParser
 		let nodeName: string = "";
 		let attributes: KeyAndValue[] | null;
 
-		xmlWalkthroughIndex = this.GetIndexAfterXmlHeader();
+		xmlWalkthroughIndex = this.GetStartIndexOfXml();
 
 		try
 		{
@@ -196,7 +208,7 @@ class XmlParser
 
 				xmlWalkthroughIndex = nodeString.nodeEndIndex + 1;
 
-				nodeName = StringMethods.ExtractNodeName(nodeString.nodeText);
+				nodeName = XmlStringMethods.ExtractNodeName(nodeString.nodeText);
 
 				//console.log(`nodeName: "${nodeName}"`);
 				//console.log(`textBefore: "${nodeString.textBefore}"`);
@@ -208,13 +220,13 @@ class XmlParser
 
 				if (nodeString.nodeText.endsWith("/"))
 				{	// If node is a self-closing node.
-					attributes = StringMethods.ExtractAttributes(nodeString.nodeText);
+					attributes = XmlStringMethods.ExtractAttributes(nodeString.nodeText);
 					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", attributes);
 					this.tree.GoToParent();
 				}
 				else if (!nodeString.nodeText.startsWith("/"))
 				{	// If node is NOT a closing node but an opening node.
-					attributes = StringMethods.ExtractAttributes(nodeString.nodeText);
+					attributes = XmlStringMethods.ExtractAttributes(nodeString.nodeText);
 					this.tree.CreateChild(this.tree.nodePointer, nodeName, "", attributes);
 				}
 				else
@@ -233,11 +245,6 @@ class XmlParser
 			console.error("XmlParser: Parse error.");
 			return false;
 		}
-
-		// TODO: CDATA section support
-		/*
-			<![CDATA[   text text  ]]>
-		*/
 	}
 
 

@@ -1,5 +1,5 @@
 /**
-  * @description TXP - Tiny XML Parser written in TypeScript.
+  * TXP - Tiny XML Parser written in TypeScript.
   * @author Jan Prazak
   * @website https://github.com/Amarok24/
   * @license MIT
@@ -11,6 +11,7 @@ import { XmlParser } from "./XmlParser.ts";
 
 const offlineFile = "sample.xml";
 //const offlineFile = "jobs_truncated.xml";
+//const offlineFile = "jobrequest.xml";
 
 let textFileReader = new TextFileReader(offlineFile);
 const readSuccess = textFileReader.Fetch();

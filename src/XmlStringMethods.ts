@@ -1,9 +1,9 @@
 import { KeyAndValue } from "./XmlNode.ts";
 
-export { StringMethods };
+export { XmlStringMethods };
 
 
-class StringMethods
+class XmlStringMethods
 {
 	public static ExtractNodeName(s: string): string
 	{
@@ -34,6 +34,25 @@ class StringMethods
 		}
 
 		return arr;
+	}
+
+	/**
+	 * Checks if input string contains a CDATA wrapper and removes it (if found).
+	 * A string "trim" will be performed before check.
+	 * @param input String which may contain a CDATA section that will be removed.
+	 * @returns Input string without CDATA section.
+	 */
+	public static RemoveCDataWrapper(input: string): string
+	{
+		const re = new RegExp(/^<!\[CDATA\[([\s\S]*)]]>$/);
+		const result: string[] | null = input.trim().match(re);
+
+		if (result !== null)
+		{
+			return result[1];
+		}
+
+		return input;
 	}
 }
 
