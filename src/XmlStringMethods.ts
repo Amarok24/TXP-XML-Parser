@@ -7,7 +7,8 @@ class XmlStringMethods
 {
 	public static ExtractNodeName(s: string): string
 	{
-		let r = new RegExp(/\w+/);
+		//let r = new RegExp(/\w+/);
+		let r = new RegExp(/[\w-:]+/); // Matches also namespaces.
 		let match = r.exec(s);
 		if (match !== null)
 		{
@@ -19,7 +20,8 @@ class XmlStringMethods
 
 	public static ExtractAttributes(s: string): KeyAndValue[] | null
 	{
-		let r = new RegExp(/(\w+)="([\S\s]*?)"/g);
+		//let r = new RegExp(/(\w+)="([\S\s]*?)"/g);
+		let r = new RegExp(/([\w-:]+)="([\S\s]*?)"/g); // Matches also namespaces.
 		let arr: KeyAndValue[] = [];
 		let matches = [...s.matchAll(r)];
 

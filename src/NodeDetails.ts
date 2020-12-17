@@ -17,17 +17,6 @@ class NodeDetails
 		console.log(`%cName: <${node.name}>`, cStyleCyan);
 		console.log(`Text content: ${node.content}`);
 
-		//console.log(`\nNode has children? ${nodeHasChildren}`);
-
-		if (nodeHasChildren)
-		{
-			console.log("Listing children:");
-			for (let i = 0; i < node.children!.length; i++)
-			{
-				console.log(`%cindex ${i} = <${node.children![i].name}>`, cStyleGold);
-			}
-		}
-
 		//console.log(`\nNode has attributes? ${nodeHasAttributes}`);
 
 		if (nodeHasAttributes)
@@ -38,5 +27,16 @@ class NodeDetails
 				console.log(`%cindex ${i}, name="${node.attributes![i][0]}", value="${node.attributes![i][1]}"`, cStyleGreen);
 			}
 		}
+
+		//console.log(`\nNode has children? ${nodeHasChildren}`);
+		if (nodeHasChildren)
+		{
+			console.log("Listing children:");
+			for (let i = 0; i < node.children!.length; i++)
+			{
+				console.log(`%cindex ${i} = <${node.children![i].name}>`, cStyleGold);
+			}
+		}
+
 	}
 }

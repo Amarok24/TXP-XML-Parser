@@ -82,13 +82,13 @@ class XmlParser
 
 	/**
 	 * Makes sure the main XML string processing starts at the right index.
-	 * This method skips UTF-8 BOM (if available) and also the <?xml ... ?> header.
-	 * @returns Index after UTF-8 BOM and <?xml ... header part.
+	 * This method skips UTF-16 BOM (if available) and also the <?xml ... ?> header.
+	 * @returns Index after UTF-16 BOM and <?xml ... header part.
 	 */
 	private GetStartIndexOfXml(): number
 	{
-		const javascriptBomString = "\ufeff";
-		// UTF-8 BOM in textfiles is 0xEFBBBF, but a string in JS contains only 0xFEFF
+		const javascriptBomString = "\uFEFF";
+		// If UTF-8 textfile contains a BOM (which must be 0xEFBBBF) it will be automatically changed by textfile reader to an UTF-16 BOM in JavaScript string. BOM is then always 0xFEFF (Big-Endian).
 		const xmlStart = "<?xml";
 		const bomAndXmlStart = javascriptBomString + xmlStart;
 
@@ -96,13 +96,12 @@ class XmlParser
 
 		if (this.xmlString.startsWith(javascriptBomString))
 		{
-			console.log("XML input file contains UTF-8 BOM");
+			console.log("XML input file contains Unicode BOM.");
 		}
 
 		if ( !(this.xmlString.startsWith("<?xml") || this.xmlString.startsWith(bomAndXmlStart)) )
 		{
 			return i;
-			// TODO: handle utf-8 BOM ??
 		}
 
 		for (i = 0; i < this.xmlString.length; i++)
