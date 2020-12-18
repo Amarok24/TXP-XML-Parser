@@ -8,7 +8,7 @@ To see an interactive example just run `./run.sh`.
 
 ### Why another XML parser?
 - Back-end JavaScript does not offer DOMParser and/or XMLHttpRequest with its built-in XML parsers
-- All existing XML parsers which I have found are either outdated (and sometimes don't even work) or they do not meet my requirements
+- All existing XML parsers which I have found are either outdated (= don't even work) or they do not meet my requirements
 
 ### Current status:
 - Works with most (all?) well-formed XML files

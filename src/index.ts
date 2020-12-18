@@ -2,7 +2,8 @@
   * TXP - Tiny XML Parser written in TypeScript.
   * @author Jan Prazak
   * @website https://github.com/Amarok24/
-  * @license MIT
+  * @copyright 2020 Jan Prazak
+  * @license Apache-2.0
 */
 
 
