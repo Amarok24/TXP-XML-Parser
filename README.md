@@ -19,5 +19,4 @@ To see an interactive example just run `./run.sh`.
 - Node queries
 - Export of node query results to a CSV file (or XML file as well)
 
-
 If you should find any issues, just let me know - preferably through GitHub discussions (https://github.com/Amarok24/TXP-XML-Parser/discussions).
