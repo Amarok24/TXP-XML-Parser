@@ -4,11 +4,14 @@
 
 This is a back-end project (command line), currently made to work with Deno runtime (https://deno.land/) but can be easily ported to NodeJS.
 
-To see an interactive example just execute run.sh (Deno runtime needed).
+To see an interactive example just run `./run.sh`.
 
+### Why another XML parser?
+- Back-end JavaScript does not offer DOMParser and/or XMLHttpRequest with its built-in XML parsers
+- All existing XML parsers which I have found are either outdated (and sometimes don't even work) or they do not meet my requirements
 
 ### Current status:
-- Works with most (all?) valid XML files
+- Works with most (all?) well-formed XML files
 - Supports XML attributes, namespaces, CDATA sections
 - Big files should be no problem (very fast processing, tested with 21000 nodes)
 
