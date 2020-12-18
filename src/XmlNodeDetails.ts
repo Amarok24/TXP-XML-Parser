@@ -5,10 +5,10 @@
 
 import { XmlNode } from "./XmlNode.ts";
 
-export { NodeDetails };
+export { XmlNodeDetails };
 
 
-class NodeDetails
+class XmlNodeDetails
 {
 	public static Display(node: XmlNode)
 	{
@@ -16,11 +16,11 @@ class NodeDetails
 		const nodeHasAttributes = node.attributes !== null;
 		const cStyleGold = "color:gold";
 		const cStyleCyan = "color:cyan";
-		const cStyleGreen = "color:green";
+		const cStyleLime = "color:lime";
 		console.log("--------------------");
 		console.log(`Node ID: ${node.id}`);
 		console.log(`%cName: <${node.name}>`, cStyleCyan);
-		console.log(`Text content: ${node.content}`);
+		console.log(`Text content: %c${node.content}`, cStyleCyan);
 
 		//console.log(`\nNode has attributes? ${nodeHasAttributes}`);
 
@@ -29,7 +29,7 @@ class NodeDetails
 			console.log("Listing attributes:");
 			for (let i = 0; i < node.attributes!.length; i++)
 			{
-				console.log(`%cindex ${i}, name="${node.attributes![i][0]}", value="${node.attributes![i][1]}"`, cStyleGreen);
+				console.log(`%cindex ${i}, name="${node.attributes![i][0]}", value="${node.attributes![i][1]}"`, cStyleLime);
 			}
 		}
 

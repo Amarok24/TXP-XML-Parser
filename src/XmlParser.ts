@@ -6,7 +6,6 @@
 import { KeyAndValue, XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
 import { XmlStringMethods } from "./XmlStringMethods.ts";
-import { NodeDetails } from "./NodeDetails.ts";
 
 export { XmlParser };
 
@@ -23,7 +22,7 @@ interface INodeBoundary
 class XmlParser
 {
 	private readonly xmlString: string;
-	private tree: XmlTree;
+	public tree: XmlTree;
 
 	public get NodeCount()
 	{
@@ -37,53 +36,6 @@ class XmlParser
 			new XmlNode(null, "[superroot]", "[tree superroot]", null)
 		);
 	}
-
-
-	/**
-	 * Interactive traversal of the tree. Control through user input in console. No error checks at the moment. Mainly for testing purposes.
-	 */
-	public Interactive(): void
-	{
-		const cStyleBlue = "background-color:steelblue;color:white";
-		const cStyleRed = "background-color:darkred;color:white";
-		console.log("%cEntering interactive mode", cStyleBlue);
-
-		this.tree.GoToRoot();
-		console.log("Current position: root node. Let's begin...");
-
-		while (true)
-		{
-			NodeDetails.Display(this.tree.nodePointer);
-			let answer: string = prompt("\nType in child index or 'p' for parent or 'x' for exit:", "x")!;
-
-			if (answer === "p")
-			{
-				try
-				{
-					console.log("%cGoing to parent", cStyleBlue);
-					this.tree.GoToParent();
-				}
-				catch (error)
-				{
-					console.log("%cNo parent, this is the root node.", cStyleRed);
-				}
-			}
-			else if (answer === "x")
-			{
-				break;
-			}
-			else
-			{
-				const selectedChildIndex = parseInt(answer);
-
-				console.log(`%cGoing to child index ${selectedChildIndex}`, cStyleBlue);
-				this.tree.GoToChild(selectedChildIndex);
-			}
-		}
-
-		console.log("End of interactive mode.");
-	}
-
 
 	/**
 	 * Makes sure the main XML string processing starts at the right index.
