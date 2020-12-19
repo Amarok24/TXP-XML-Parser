@@ -4,7 +4,6 @@
 // You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 
 import { KeyAndValue } from "./XmlNode.ts";
-
 export { XmlStringMethods };
 
 
@@ -12,7 +11,6 @@ class XmlStringMethods
 {
 	public static ExtractNodeName(s: string): string
 	{
-		//let r = new RegExp(/\w+/);
 		let r = new RegExp(/[\w-:]+/); // Matches also namespaces.
 		let match = r.exec(s);
 		if (match !== null)
@@ -25,7 +23,6 @@ class XmlStringMethods
 
 	public static ExtractAttributes(s: string): KeyAndValue[] | null
 	{
-		//let r = new RegExp(/(\w+)="([\S\s]*?)"/g);
 		let r = new RegExp(/([\w-:]+)="([\S\s]*?)"/g); // Matches also namespaces.
 		let arr: KeyAndValue[] = [];
 		let matches = [...s.matchAll(r)];
@@ -62,12 +59,3 @@ class XmlStringMethods
 		return input;
 	}
 }
-
-	/*
-
-
-		const str = 'Mozilla';
-
-		console.log(str.substring(1, 3));  2nd param: The index of the first character to exclude from the returned substring.
-		// expected output: "oz"
-	 */

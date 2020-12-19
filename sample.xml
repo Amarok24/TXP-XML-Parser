@@ -35,9 +35,11 @@
 
 	<Job Version="1.1" RequisitionNumber="12211" InternalID="10999315">
 		<Company>
-			<Name>AnotherCompany</Name>
+			<Name><![CDATA[Johnson & Johnson]]></Name>
 			<Description />
-			<Department>Deutsche AG</Department>
+			<Department>
+				<![CDATA[<internal>]]>
+			</Department>
 			<Address>
 				<City>Berlin</City>
 				<PostalCode>12345</PostalCode>

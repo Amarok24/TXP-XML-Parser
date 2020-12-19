@@ -5,7 +5,6 @@
 
 import { XmlNode } from "./XmlNode.ts";
 import type { KeyAndValue } from "./XmlNode.ts";
-
 export { XmlTree };
 
 

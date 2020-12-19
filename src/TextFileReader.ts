@@ -8,22 +8,23 @@ export { TextFileReader };
 
 class TextFileReader
 {
-	public readonly onlineUrl: string;
-	public data = "";
+	public readonly filePathOrUrl: string;
+	public data: string = "";
 
-	constructor(onlineUrl: string)
+	constructor(filePathOrUrl: string)
 	{
-		this.onlineUrl = onlineUrl;
+		this.filePathOrUrl = filePathOrUrl;
 	}
 
-	// Returns 'true' on success.
+	/**
+	 * @returns True on success.
+	 */
 	public Fetch(): boolean
 	{
+		//TODO: complete rewrite once parser has more features
 		let success = false;
-
-		this.data = Deno.readTextFileSync(this.onlineUrl);
+		this.data = Deno.readTextFileSync(this.filePathOrUrl);
 		if (this.data) success = true;
-
 		return success;
 	}
 

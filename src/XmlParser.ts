@@ -6,7 +6,6 @@
 import { KeyAndValue, XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
 import { XmlStringMethods } from "./XmlStringMethods.ts";
-
 export { XmlParser };
 
 
@@ -95,8 +94,27 @@ class XmlParser
 			if (this.xmlString[i] === "<")
 			{
 				if (this.xmlString[i + 1] === "!")
-				{	// "<!" detected, which should be a CDATA section
+				{	// "<!" detected, which should be a CDATA section.
+					// Now collect all following chars until end of CDATA reached.
 					nodeBoundary.textBefore += this.xmlString[i];
+
+					while (true)
+					{
+						i++;
+
+						if (this.xmlString[i] === "]")
+						{
+							if (this.xmlString.substr(i, 3) === "]]>")
+							{
+								nodeBoundary.textBefore += "]]>";
+								i += 2;
+								break;
+							}
+						}
+
+						nodeBoundary.textBefore += this.xmlString[i];
+					}
+
 					continue;
 				}
 

@@ -35,26 +35,3 @@ console.log(`XML tree has ${parser.NodeCount} nodes.`);
 
 //parser.Interactive();
 XmlTreeInteractive.Start(parser.tree)
-
-//FIXME: CDATA
-/*
-Node ID: 35
-Name: <Description>
-Text content: ]]>
-Listing children:
-index 0 = <br>
-index 1 = <p>
-index 2 = <ul>
-index 3 = <br>
-index 4 = <p>
-index 5 = <ul>
-index 6 = <br>
-index 7 = <p>
-index 8 = <ul>
-index 9 = <br>
-index 10 = <p>
-index 11 = <p>
-index 12 = <p>
-index 13 = <strong>
-index 14 = <p>
-*/

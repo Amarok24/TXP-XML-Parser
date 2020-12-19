@@ -37,6 +37,7 @@ class XmlTreeInteractive
 				catch (error)
 				{
 					console.log("%cNo parent, this is the root node.", cStyleRed);
+					prompt("Press ENTER to continue...");
 				}
 			}
 			else if (answer === "x")
