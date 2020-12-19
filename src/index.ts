@@ -9,6 +9,8 @@
 import { TextFileReader } from "./TextFileReader.ts";
 import { XmlReader } from "./XmlReader.ts";
 import { XmlTreeInteractive } from "./XmlTreeInteractive.ts";
+import { XmlQuery } from "./XmlQuery.ts";
+
 
 const offlineFile = "sample.xml";
 //const offlineFile = "jobs_truncated.xml";
@@ -27,10 +29,18 @@ else
 	// textFileReader.data now contains whole file content as text
 }
 
-let parser = new XmlReader(textFileReader.data);
+let xmlStructure = new XmlReader(textFileReader.data);
 
-console.log(`XML tree has ${parser.NodeCount} nodes.`);
-parser.Parse();
-console.log(`XML tree has ${parser.NodeCount} nodes.`);
+console.log(`XML tree has ${xmlStructure.NodeCount} nodes.`);
+xmlStructure.Parse();
+console.log(`XML tree has ${xmlStructure.NodeCount} nodes.`);
 
-XmlTreeInteractive.Start(parser.tree)
+
+// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
+//XmlTreeInteractive.Start(xmlStructure.tree);
+
+
+let myQuery = new XmlQuery(xmlStructure.tree);
+myQuery.ByXPath("/JobBatch/Job/Company/Name");
+
+myQuery.ResultToString();

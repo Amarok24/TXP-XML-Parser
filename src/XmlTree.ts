@@ -67,4 +67,9 @@ class XmlTree
 		}
 	}
 
+
+	public GetCurrentNode(): XmlNode
+	{
+		return this.nodePointer;
+	}
 }
