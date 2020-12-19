@@ -5,7 +5,8 @@
 
 export { TextFileReader };
 
-
+//TODO: complete rewrite once parser has more features,
+// probably integrate this reader into XmlReader?
 class TextFileReader
 {
 	public readonly filePathOrUrl: string;
@@ -21,7 +22,6 @@ class TextFileReader
 	 */
 	public Fetch(): boolean
 	{
-		//TODO: complete rewrite once parser has more features
 		let success = false;
 		this.data = Deno.readTextFileSync(this.filePathOrUrl);
 		if (this.data) success = true;

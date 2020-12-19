@@ -16,8 +16,8 @@ class XmlNode
 	public parent: XmlNode | null;
 	public children: XmlNode[] | null = null;
 	public attributes: KeyAndValue[] | null = null;
-	public content: string;
-	public id: number;
+	public content: string; // Text content of node.
+	public id: number; // Internal unique ID, gets incremented with each new node.
 	protected static counterForId = 0;
 
 	constructor(parent: XmlNode | null, name: string, content: string, attributes: KeyAndValue[] | null)

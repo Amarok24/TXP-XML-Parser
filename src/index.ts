@@ -7,7 +7,7 @@
 
 
 import { TextFileReader } from "./TextFileReader.ts";
-import { XmlParser } from "./XmlParser.ts";
+import { XmlReader } from "./XmlReader.ts";
 import { XmlTreeInteractive } from "./XmlTreeInteractive.ts";
 
 const offlineFile = "sample.xml";
@@ -27,11 +27,10 @@ else
 	// textFileReader.data now contains whole file content as text
 }
 
-let parser = new XmlParser(textFileReader.data);
+let parser = new XmlReader(textFileReader.data);
 
 console.log(`XML tree has ${parser.NodeCount} nodes.`);
 parser.Parse();
 console.log(`XML tree has ${parser.NodeCount} nodes.`);
 
-//parser.Interactive();
 XmlTreeInteractive.Start(parser.tree)

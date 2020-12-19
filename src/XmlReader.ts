@@ -6,7 +6,7 @@
 import { KeyAndValue, XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
 import { XmlStringMethods } from "./XmlStringMethods.ts";
-export { XmlParser };
+export { XmlReader };
 
 
 interface INodeBoundary
@@ -18,7 +18,7 @@ interface INodeBoundary
 }
 
 
-class XmlParser
+class XmlReader
 {
 	private readonly xmlString: string;
 	public tree: XmlTree;
@@ -181,11 +181,7 @@ class XmlParser
 				}
 
 				xmlWalkthroughIndex = nodeString.nodeEndIndex + 1;
-
 				nodeName = XmlStringMethods.ExtractNodeName(nodeString.nodeText);
-
-				//console.log(`nodeName: "${nodeName}"`);
-				//console.log(`textBefore: "${nodeString.textBefore}"`);
 
 				if (nodeString.textBefore !== "")
 				{
@@ -216,7 +212,7 @@ class XmlParser
 		}
 		catch (error)
 		{
-			console.error("XmlParser: Parse error.");
+			console.error("XmlReader: Parse error.");
 			return false;
 		}
 	}
