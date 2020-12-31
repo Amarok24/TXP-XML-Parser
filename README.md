@@ -6,7 +6,9 @@ This is a back-end project (command line).
 
 Class "TextFileReader" makes use of Deno runtime (https://deno.land/) but could be easily rewritten to use NodeJS - using `fs.readFileSync`, see [here](https://nodejs.dev/learn/reading-files-with-nodejs). However headers of all .ts files would need small modifications too because NodeJS uses another module system than ES6 (Deno's module system is compatible with ES6).
 
-To see an interactive example just run `./run.sh`.
+To see an interactive example just run `./run.sh`. The interactive mode looks like this:
+
+![Preview of interactive mode](./interactive-mode.png)
 
 ### Why another XML parser?
 - Back-end JavaScript does not offer DOMParser and/or XMLHttpRequest with its built-in XML parsers

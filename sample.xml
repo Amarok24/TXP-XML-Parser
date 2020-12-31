@@ -3,16 +3,16 @@
 
 	<Job Version="1.1" RequisitionNumber="11651" InternalID="10921047">
 		<Company>
-			 
-			<Name>BlaCompany ABC</Name>
+			<Name>Deutsche Post AG</Name>
 			<Description text="dummy description" />
-			<Department>
-				Deutsche Post AG
-				<Test>Bla</Test>
+			<Department Id="328099">
+				Heavy Logistics
+				<SubDepartment>Delivery</SubDepartment>
 			</Department>
 			<Address>
 				<City>Hamburg</City>
 				<PostalCode />
+				Headquarters
 			</Address>
 		</Company>
 		<Position>
@@ -39,7 +39,7 @@
 		<Company>
 			<Name><![CDATA[Johnson & Johnson]]></Name>
 			<Description />
-			<Department>
+			<Department Id="999">
 				<![CDATA[<internal>]]>
 			</Department>
 			<Address>
