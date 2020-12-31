@@ -1,5 +1,5 @@
 #!/bin/sh
-# echo "Hello"
+# echo "Running TS code"
 # echo $@
 
 deno run --allow-net --allow-read --allow-write src/index.ts

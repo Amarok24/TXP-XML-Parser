@@ -36,8 +36,9 @@ if (xmlStructure.Parse())
 	console.log(`XML tree has ${xmlStructure.tree.nodeCounter} nodes.`);
 
 	// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
-	//XmlTreeInteractive.Start(xmlStructure.tree);
+	XmlTreeInteractive.Start(xmlStructure.tree);
 
+/*
 	let myQuery = new XmlQuery(xmlStructure.tree);
 
 	try
@@ -52,4 +53,6 @@ if (xmlStructure.Parse())
 	{
 		myQuery.ResultToString();
 	}
+ */
+
 }

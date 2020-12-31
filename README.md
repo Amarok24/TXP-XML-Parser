@@ -2,7 +2,9 @@
 
 ### A fast and tiny XML parser.
 
-This is a back-end project (command line), currently made to work with Deno runtime (https://deno.land/) but can be easily ported to NodeJS.
+This is a back-end project (command line).
+
+Class "TextFileReader" makes use of Deno runtime (https://deno.land/) but could be easily rewritten to use NodeJS - using `fs.readFileSync`, see [here](https://nodejs.dev/learn/reading-files-with-nodejs). However headers of all .ts files would need small modifications too because NodeJS uses another module system than ES6 (Deno's module system is compatible with ES6).
 
 To see an interactive example just run `./run.sh`.
 
@@ -16,7 +18,7 @@ To see an interactive example just run `./run.sh`.
 - Big files should be no problem (very fast processing, tested with 21000 nodes)
 
 ### To do:
-- Node queries
+- Node queries (basic XPath)
 - Export of node query results to a CSV file (or XML file as well)
 
 If you should find any issues, just let me know - preferably through GitHub discussions (https://github.com/Amarok24/TXP-XML-Parser/discussions).
