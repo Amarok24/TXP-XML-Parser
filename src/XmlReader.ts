@@ -23,11 +23,6 @@ class XmlReader
 	private readonly xmlString: string;
 	public tree: XmlTree;
 
-	public get NodeCount()
-	{
-		return this.tree.nodeCounter;
-	}
-
 	constructor(xmlString: string)
 	{
 		this.xmlString = xmlString;
@@ -77,6 +72,7 @@ class XmlReader
 	 */
 	private GetNextElement(startIndex: number): INodeBoundary
 	{
+		// FIXME: XML comments break the algorithm
 		let nodeBoundary: INodeBoundary = {
 			nodeStartIndex: 0,
 			nodeEndIndex: 0,
@@ -166,6 +162,7 @@ class XmlReader
 		let nodeString: INodeBoundary | null = null;
 		let nodeName: string = "";
 		let attributes: KeyAndValue[] | null;
+		const cStyleRed = "color:red";
 
 		xmlWalkthroughIndex = this.GetStartIndexOfXml();
 
@@ -174,6 +171,7 @@ class XmlReader
 			while (true)
 			{
 				nodeString = this.GetNextElement(xmlWalkthroughIndex);
+				//console.log(`nodeString.nodeText = ${nodeString.nodeText}`);
 
 				if (nodeString.nodeText === "")
 				{
@@ -212,7 +210,7 @@ class XmlReader
 		}
 		catch (error)
 		{
-			console.error("XmlReader: Parse error.");
+			console.error("%cXmlReader: Parse error.", cStyleRed);
 			return false;
 		}
 	}

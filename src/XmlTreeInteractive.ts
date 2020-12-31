@@ -8,7 +8,7 @@ import { XmlTree } from "./XmlTree.ts";
 export { XmlTreeInteractive };
 
 /**
- * Interactive traversal of the tree. Control through user input in console. No error checks. Mainly for testing / demo purpose.
+ * Interactive traversal of the tree. Control through user input in console. No error checks. Mainly for testing / demo purposes.
  */
 class XmlTreeInteractive
 {

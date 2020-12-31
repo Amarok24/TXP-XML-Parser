@@ -11,8 +11,17 @@ export { XmlTree };
 class XmlTree
 {
 	public rootNode: XmlNode;
+
+	/**
+	 * Property nodePointer changes its XmlNode reference dynamically. It always points to current node which has been processed via a class method.
+	 */
 	public nodePointer: XmlNode;
-	public nodeCounter: number = 0;
+	private _nodeCounter: number = 0;
+
+	public get nodeCounter(): number
+	{
+		return this._nodeCounter;
+	}
 
 	constructor(rootNode: XmlNode)
 	{
@@ -35,7 +44,7 @@ class XmlTree
 			ofParent.children.push(newNode);
 		}
 
-		this.nodeCounter++;
+		this._nodeCounter++;
 
 		this.nodePointer = newNode;
 		return newNode;
@@ -63,7 +72,7 @@ class XmlTree
 		}
 		else
 		{
-			throw new Error("Parent is null.");
+			throw new Error("error 0, parent is null.");
 		}
 	}
 

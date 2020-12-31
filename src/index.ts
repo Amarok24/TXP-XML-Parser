@@ -31,16 +31,25 @@ else
 
 let xmlStructure = new XmlReader(textFileReader.data);
 
-console.log(`XML tree has ${xmlStructure.NodeCount} nodes.`);
-xmlStructure.Parse();
-console.log(`XML tree has ${xmlStructure.NodeCount} nodes.`);
+if (xmlStructure.Parse())
+{
+	console.log(`XML tree has ${xmlStructure.tree.nodeCounter} nodes.`);
 
+	// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
+	//XmlTreeInteractive.Start(xmlStructure.tree);
 
-// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
-//XmlTreeInteractive.Start(xmlStructure.tree);
+	let myQuery = new XmlQuery(xmlStructure.tree);
 
-
-let myQuery = new XmlQuery(xmlStructure.tree);
-myQuery.ByXPath("/JobBatch/Job/Company/Name");
-
-myQuery.ResultToString();
+	try
+	{
+		myQuery.ByXPath("/JobBatch/Job/Company/Name");
+		//myQuery.ResultToString();
+	} catch (error)
+	{
+		console.error(error);
+	}
+	finally
+	{
+		myQuery.ResultToString();
+	}
+}
