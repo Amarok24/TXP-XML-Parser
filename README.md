@@ -12,15 +12,16 @@ To see an interactive example just run `./run.sh`. The interactive mode looks li
 
 ### Why another XML parser?
 - Back-end JavaScript does not offer DOMParser and/or XMLHttpRequest with its built-in XML parsers
-- All existing XML parsers which I have found are either outdated (= don't even work) or they do not meet my requirements
+- All existing XML parsers which I have found were either outdated (= don't even work) or they did not meet my requirements (they were too complex). All I wanted was a simple XML parser which would extract specific nodes in order to present the extracted content somewhere else.
 
 ### Current status:
-- Works with most (all?) well-formed XML files
+- Works with most (well-formed) XML files
 - Supports XML attributes, namespaces, CDATA sections
+- Does not support more advanced XML features (XML specification is _huge_)
 - Big files should be no problem (very fast processing, tested with 21000 nodes)
 
 ### To do:
-- Node queries (basic XPath)
+- Node queries (basic XPath) *currently in development*
 - Export of node query results to a CSV file (or XML file as well)
 
 If you should find any issues, just let me know - preferably through GitHub discussions (https://github.com/Amarok24/TXP-XML-Parser/discussions).
