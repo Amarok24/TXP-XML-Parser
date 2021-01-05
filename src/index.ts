@@ -5,12 +5,10 @@
   * @license Apache-2.0
 */
 
-
 import { TextFileReader } from "./TextFileReader.ts";
 import { XmlReader } from "./XmlReader.ts";
 import { XmlTreeInteractive } from "./XmlTreeInteractive.ts";
 import { XmlQuery } from "./XmlQuery.ts";
-
 
 const offlineFile = "sample.xml";
 //const offlineFile = "jobs_truncated.xml";

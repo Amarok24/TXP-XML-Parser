@@ -28,7 +28,7 @@ class XmlNodeDetails
 			console.log("Listing attributes:");
 			for (let i = 0; i < node.attributes!.length; i++)
 			{
-				console.log(`%cindex ${i}, name="${node.attributes![i][0]}", value="${node.attributes![i][1]}"`, cStyleLime);
+				console.log(`%cindex ${i} : name="${node.attributes![i][0]}", value="${node.attributes![i][1]}"`, cStyleLime);
 			}
 		}
 
@@ -38,7 +38,7 @@ class XmlNodeDetails
 			console.log("Listing children:");
 			for (let i = 0; i < node.children!.length; i++)
 			{
-				console.log(`%cindex ${i} = <${node.children![i].name}>`, cStyleGold);
+				console.log(`%cindex ${i} : <${node.children![i].name}>`, cStyleGold);
 			}
 		}
 

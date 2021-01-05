@@ -142,6 +142,7 @@ class XmlReader
 		}
 
 		nodeBoundary.textBefore = XmlStringMethods.RemoveCDataWrapper(nodeBoundary.textBefore);
+		nodeBoundary.textBefore = nodeBoundary.textBefore.trim();
 
 		return nodeBoundary;
 	}
