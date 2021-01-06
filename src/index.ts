@@ -35,7 +35,6 @@ if (xmlStructure.Parse())
 
 	// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
 	XmlTreeInteractive.Start(xmlStructure.tree);
-//FIXME: /JobBatch/Job/Company/Department   TEXT MISSING!!!
 
 /*
 	let myQuery = new XmlQuery(xmlStructure.tree);
