@@ -1,7 +1,3 @@
-// Copyright 2020 Jan Prazak
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 class TextFileReader {
     data = "";
     constructor(filePathOrUrl){
@@ -109,23 +105,20 @@ class XmlReader {
         this.xmlString = xmlString;
         this.tree = new XmlTree(new XmlNode(null, "[superroot]", "[tree superroot]", null));
     }
-    GetStartIndexOfXml() {
+    GetIndexOfMainRoot() {
         const javascriptBomString = "\uFEFF";
-        const xmlStart = "<?xml";
-        const bomAndXmlStart = javascriptBomString + xmlStart;
         let i = 0;
         if (this.xmlString.startsWith(javascriptBomString)) {
-            console.log("XML input file contains Unicode BOM.");
-        }
-        if (!(this.xmlString.startsWith("<?xml") || this.xmlString.startsWith(bomAndXmlStart))) {
-            return i;
+            console.log("Info: XML string contains Unicode BOM.");
         }
         for(i = 0; i < this.xmlString.length; i++){
-            if (this.xmlString[i] === ">") {
+            if (this.xmlString[i] === "<") {
+                if (this.xmlString[i + 1] === "?") continue;
                 break;
             }
         }
-        return i + 1;
+        console.log("Start index is", i);
+        return i;
     }
     GetNextElement(startIndex) {
         let nodeBoundary = {
@@ -185,7 +178,7 @@ class XmlReader {
         let nodeName = "";
         let attributes2;
         const cStyleRed = "color:red";
-        xmlWalkthroughIndex = this.GetStartIndexOfXml();
+        xmlWalkthroughIndex = this.GetIndexOfMainRoot();
         try {
             while(true){
                 nodeString = this.GetNextElement(xmlWalkthroughIndex);
@@ -303,7 +296,7 @@ class XmlTreeInteractive {
         console.log("End of interactive mode.");
     }
 }
-const offlineFile = "sample.xml";
+const offlineFile = "bbc-news.rss";
 let textFileReader = new TextFileReader(offlineFile);
 const readSuccess = textFileReader.Fetch();
 if (!readSuccess) {
