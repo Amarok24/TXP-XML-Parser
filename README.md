@@ -25,6 +25,7 @@ See `index.ts` for examples. The output can then be processed individually, here
 - Supports XML attributes, namespaces, CDATA sections
 - Does not support more advanced XML features (XML specification is _huge_)
 - Big files should be no problem (very fast processing, tested with 21000 nodes)
+- Class XmlReader takes an XML string as input, it does not read any external XMLs (offline or online), so an external method must be used (currently the project uses the TextFileReader class to read a file from disk, but using anything else like "fetch" is possible, of course).
 
 ### To do:
 - XML files with comments currently don't work
