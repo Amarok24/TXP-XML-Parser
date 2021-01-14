@@ -37,10 +37,9 @@ class XmlQuery
 	}
 
 
-	public ResultToString(): string
+	public ResultsToConsole(): void
 	{
 		console.dir(this.currentResults);
-		return "";
 	}
 
 
@@ -53,7 +52,7 @@ class XmlQuery
 
 		if (processIndex === pathArray.length)
 		{
-			console.log(`node "${currentNode.name}" found! going to parent`);
+			//console.log(`node "${currentNode.name}" found! going to parent`);
 			this.currentResults.push(currentNode.content);
 		}
 		else
@@ -89,7 +88,8 @@ class XmlQuery
 		{
 			if (error.message.startsWith("error 0"))
 			{
-				console.log("Root node reached, no parent available.");
+				// no parent available (root reached)
+				console.log("Recursive search finished.");
 			}
 			else
 			{

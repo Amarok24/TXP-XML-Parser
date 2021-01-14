@@ -11,7 +11,6 @@ import { XmlTreeInteractive } from "./XmlTreeInteractive.ts";
 import { XmlQuery } from "./XmlQuery.ts";
 
 //const offlineFile = "sample.xml";
-//const offlineFile = "jobs_truncated.xml";
 const offlineFile = "bbc-news.rss";
 
 let textFileReader = new TextFileReader(offlineFile);
@@ -33,24 +32,35 @@ if (xmlStructure.Parse())
 {
 	console.log(`XML tree has ${xmlStructure.tree.nodeCounter} nodes.`);
 
-	// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
+	// FOR AN INTERACTIVE DEMO USE THIS:
 	 XmlTreeInteractive.Start(xmlStructure.tree);
 
+
+	// FOR A QUERY DEMO USE THIS:
 /* 
 	let myQuery = new XmlQuery(xmlStructure.tree);
 
 	try
 	{
-		myQuery.ByXPath("/JobBatch/Job/Position/Title");
-		//myQuery.ResultToString();
+		myQuery.ByXPath("/rss/channel/item/title");
 	} catch (error)
 	{
 		console.error(error);
 	}
 	finally
 	{
-		myQuery.ResultToString();
+		console.log("Displaying first 10 results...\n");
+
+		for (let i = 0; i < myQuery.currentResults.length; i++)
+		{
+			if (i === 11) break;
+			console.log(myQuery.currentResults[i]);
+		}
+
+		// Or display all results to console with:
+		// myQuery.ResultsToConsole();
 	}
  */
+
 
 }

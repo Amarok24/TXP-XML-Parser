@@ -33,37 +33,32 @@ class XmlReader
 
 	/**
 	 * Makes sure the main XML string processing starts at the right index.
-	 * This method skips UTF-16 BOM (if available) and also the <?xml ... ?> header.
-	 * @returns Index after UTF-16 BOM and <?xml ... header part.
+	 * This method skips UTF-16 BOM (if available) and also all <? ... ?> headers.
+	 * @returns Index of first occurence of "<" which is not followed by "?".
 	 */
-	private GetStartIndexOfXml(): number
+	private GetIndexOfMainRoot(): number
 	{
 		const javascriptBomString = "\uFEFF";
 		// If UTF-8 textfile contains a BOM (which must be 0xEFBBBF) it will be automatically changed by textfile reader to an UTF-16 BOM in JavaScript string. BOM is then always 0xFEFF (Big-Endian).
-		const xmlStart = "<?xml";
-		const bomAndXmlStart = javascriptBomString + xmlStart;
 
 		let i: number = 0;
 
 		if (this.xmlString.startsWith(javascriptBomString))
 		{
-			console.log("XML input file contains Unicode BOM.");
-		}
-
-		if ( !(this.xmlString.startsWith("<?xml") || this.xmlString.startsWith(bomAndXmlStart)) )
-		{
-			return i;
+			console.log("Info: XML string contains Unicode BOM.");
 		}
 
 		for (i = 0; i < this.xmlString.length; i++)
 		{
-			if (this.xmlString[i] === ">")
+			if (this.xmlString[i] === "<")
 			{
+				if (this.xmlString[i+1] === "?") continue;
 				break;
 			}
 		}
 
-		return i + 1;
+		console.log("Start index is", i);
+		return i;
 	}
 
 	/**
@@ -165,7 +160,7 @@ class XmlReader
 		let attributes: KeyAndValue[] | null;
 		const cStyleRed = "color:red";
 
-		xmlWalkthroughIndex = this.GetStartIndexOfXml();
+		xmlWalkthroughIndex = this.GetIndexOfMainRoot();
 
 		try
 		{
