@@ -7,12 +7,11 @@ import { XmlNode } from "./XmlNode.ts";
 import { XmlTree } from "./XmlTree.ts";
 export { XmlQuery };
 
-//type XmlNodeList = XmlNode[];
 
-//TODO: This class is under construction, not for production yet.
 class XmlQuery
 {
-	public currentResults: XmlNode[] = [];
+	public currentResults: string[] = [];
+	//public currentResults: XmlNode[] = [];
 	private linkedTree: XmlTree;
 
 	constructor(tree: XmlTree)
@@ -27,26 +26,16 @@ class XmlQuery
 	public ByXPath(path: string)
 	{
 		let pathArray: string[] = path.split("/");
-		if (pathArray[0] === "") pathArray.shift(); // Removes 1st element.
-		console.dir(pathArray);
 
-		//this.linkedTree.GoToRoot();
-		//this.DisposeRootNode();
+		// Usually 'path' starts with '/', but this leads to empty index 0, so remove it.
+		if (pathArray[0] === "") pathArray.shift(); // Removes 1st element.
+
+		console.dir(pathArray);
 		console.log(`name of current node: ${this.linkedTree.nodePointer.name}`);
 
-		this.TreeBrowser(pathArray, 0);
-
-		/*
-				for (let i = 0; i < pathArray.length; i++)
-				{
-		
-				}
-		*/
-		/*
-				this.linkedTree.GoToRoot();
-				this.linkedTree.GoToChild(0);
-				this.currentResults.push(this.linkedTree.GetCurrentNode()); */
+		this.TreeBrowser(pathArray, 1);
 	}
+
 
 	public ResultToString(): string
 	{
@@ -60,54 +49,55 @@ class XmlQuery
 		const currentNode: XmlNode = this.linkedTree.GetCurrentNode();
 		const childCount = currentNode.children ? currentNode.children.length : -1;
 
-		//console.log(`processIndex = ${processIndex}`);
+		//console.log(`processIndex = ${processIndex} (${pathArray[processIndex]}) | currentNode.name = "${currentNode.name}" | childCount = "${childCount}"`);
 
 		if (processIndex === pathArray.length)
 		{
-			this.currentResults.push(this.linkedTree.GetCurrentNode());
+			console.log(`node "${currentNode.name}" found! going to parent`);
+			this.currentResults.push(currentNode.content);
 		}
-
-		// The following FOR-loop will also be skipped if processIndex == pathArray.length
-		for (let i = 0; i < childCount; i++)
+		else
 		{
-			console.log(`i = ${i}, currentNode.name = "${currentNode.name}"`);
+			for (let i = 0; i < childCount; i++)
+			{
+				// Because current node may change outside of this loop, we have to
+				// always keep an up-to-date reference to it (complex recursion is crazy).
+				const currentNodeNow: XmlNode = this.linkedTree.GetCurrentNode();
+				//console.log(`i = ${i}, currentNodeNow.name = "${currentNodeNow.name}"`);
 
-			if (currentNode.children !== null)
-			{ // Check for !== null not necessary here, but TypeScript wants it
-				if (currentNode.children[i].name === pathArray[processIndex + 1])
+				// Below the '!' is necessary because of TypeScript
+				if (currentNodeNow.children![i].name === pathArray[processIndex])
 				{
-					console.log(`found "${pathArray[processIndex]}" at child index ${i}, diving in...`);
+					//console.log(`found "${pathArray[processIndex]}" at child index ${i}, GoToChild(${i}) ...`);
 
 					this.linkedTree.GoToChild(i);
+
+					//console.log(`recursively diving in, TreeBrowser with processIndex = ${processIndex + 1} (${pathArray[processIndex + 1]}) ...`);
 					this.TreeBrowser(pathArray, processIndex + 1);
 				}
+
+				//console.log(`ending 1 iteration of FOR loop, currentNodeNow.name = "${currentNodeNow.name}"`);
+				//console.log(`processIndex = ${processIndex}`);
 			}
-
-			console.log(`ending 1 iteration of FOR loop, currentNode.name = "${currentNode.name}"`);
-			console.log(`processIndex = ${processIndex}`);
-			//this.linkedTree.GoToParent();
-
 		}
 
-		console.log(`exiting TreeBrowser method, currentNode.name = ${currentNode.name}`);
 		try
 		{
 			this.linkedTree.GoToParent();
-		} catch (error)
+		}
+		catch (error)
 		{
 			if (error.message.startsWith("error 0"))
 			{
-				console.log("no parent available");
-
+				console.log("Root node reached, no parent available.");
+			}
+			else
+			{
+				console.error(error);
 			}
 		}
 
-
+		//console.log(`exiting TreeBrowser method, linkedTree.GetCurrentNode().name = ${this.linkedTree.GetCurrentNode().name}`);
 	}
 
-
 }
-
-
-// GetElementById: string | null
-// GetElementsByTagName: XmlNodeList  (can be returned empty)

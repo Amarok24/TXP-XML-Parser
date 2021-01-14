@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet title="XSL_formatting" type="text/xsl" href="/shared/bsp/xsl/rss/nolsol.xsl"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title><![CDATA[BBC News - Home]]></title>
+        <description><![CDATA[BBC News - Home]]></description>
+        <link>https://www.bbc.co.uk/news/</link>
+        <image>
+            <url>https://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif</url>
+            <title>BBC News - Home</title>
+            <link>https://www.bbc.co.uk/news/</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Thu, 14 Jan 2021 10:19:08 GMT</lastBuildDate>
+        <copyright><![CDATA[Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.]]></copyright>
+        <language><![CDATA[en-gb]]></language>
+        <ttl>15</ttl>
+        <item>
+            <title><![CDATA[Trump impeached for 'inciting' US Capitol riot in historic second charge]]></title>
+            <description><![CDATA[Donald Trump becomes the first president in US history to be charged with misconduct in office twice.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55656385</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55656385</guid>
+            <pubDate>Thu, 14 Jan 2021 08:01:39 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Past Covid-19 infection may provide 'months of immunity']]></title>
+            <description><![CDATA[But researchers warn there is still a risk of catching and passing the virus on to others again.]]></description>
+            <link>https://www.bbc.co.uk/news/health-55651518</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/health-55651518</guid>
+            <pubDate>Thu, 14 Jan 2021 10:13:24 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Australia: Spectacular ‘tree of life’ found in lake]]></title>
+            <description><![CDATA[An amateur photographer’s aerial photos are gaining attention for this little known "natural wonder".]]></description>
+            <link>https://www.bbc.co.uk/news/world-australia-55642974</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-australia-55642974</guid>
+            <pubDate>Thu, 14 Jan 2021 00:24:41 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Amazon faces legal challenge over Prime cancellation policy]]></title>
+            <description><![CDATA[Consumer watchdogs say the manipulative "dark pattern" design makes it hard for people to end membership.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-55637140</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/technology-55637140</guid>
+            <pubDate>Thu, 14 Jan 2021 05:25:45 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Uganda elections 2021: Bobi Wine takes on Yoweri Museveni]]></title>
+            <description><![CDATA[The internet is shut down following a campaign in which dozens of people were killed.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-55649467</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-africa-55649467</guid>
+            <pubDate>Thu, 14 Jan 2021 09:23:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Meng Wanzhou: Bullets sent in mail to Huawei's finance chief]]></title>
+            <description><![CDATA[Under house arrest in Canada on bank fraud charges, Ms Meng has reportedly received death threats.]]></description>
+            <link>https://www.bbc.co.uk/news/business-55657182</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/business-55657182</guid>
+            <pubDate>Thu, 14 Jan 2021 04:14:12 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Park Geun-hye: South Korea court upholds 20-year jail term for ex-leader]]></title>
+            <description><![CDATA[A final Supreme Court ruling upheld a reduced sentence for disgraced former president Park Geun-hye.]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-55657297</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-asia-55657297</guid>
+            <pubDate>Thu, 14 Jan 2021 07:40:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Twitter boss: Trump ban is 'right' but 'dangerous']]></title>
+            <description><![CDATA[Jack Dorsey acknowledges that banning the president undermines the ideals of an open internet.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-55657417</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/technology-55657417</guid>
+            <pubDate>Thu, 14 Jan 2021 09:32:18 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Flint water crisis: Michigan charges ex-governor Rick Snyder]]></title>
+            <description><![CDATA[It follows a new investigation into the deadly contamination of water in the Michigan city in 2014.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55656898</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55656898</guid>
+            <pubDate>Thu, 14 Jan 2021 04:20:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New York City is latest to cut Trump business ties]]></title>
+            <description><![CDATA[The Trump Organization has contracts with the city to run skating rinks, a carousel and a golf course.]]></description>
+            <link>https://www.bbc.co.uk/news/business-55642717</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/business-55642717</guid>
+            <pubDate>Thu, 14 Jan 2021 00:53:19 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Coronavirus: British tourist blamed for Lauberhorn ski race cancellation]]></title>
+            <description><![CDATA[The famous Lauberhorn ski event is cancelled after a spike in Covid-19 cases linked to one tourist.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-55645396</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-europe-55645396</guid>
+            <pubDate>Wed, 13 Jan 2021 19:45:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[US pet food recalled after 70 dogs die and others fall sick]]></title>
+            <description><![CDATA[Tests on the pet food have shown potentially unsafe levels of aflatoxins, a by-product of mould.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55659116</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55659116</guid>
+            <pubDate>Thu, 14 Jan 2021 09:50:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Rap against Dictatorship: The rappers taking on Thailand's leaders]]></title>
+            <description><![CDATA[Thai group Rap Against Dictatorship is known for its outspoken comments against the military and monarchy,]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-55655368</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-asia-55655368</guid>
+            <pubDate>Thu, 14 Jan 2021 00:04:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How did the pilot survive this plane crash?]]></title>
+            <description><![CDATA[Surveillance footage shows the moment a plane fell out of the sky in Oyster Bay, New York.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55653616</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55653616</guid>
+            <pubDate>Thu, 14 Jan 2021 00:35:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Indonesia: Archaeologists find world's oldest animal cave painting]]></title>
+            <description><![CDATA[The life-sized picture of a wild pig found in a remote cave is thought to be 45,000 years old.]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-55657257</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-asia-55657257</guid>
+            <pubDate>Thu, 14 Jan 2021 07:33:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The anti-gay row that inspired a rugby film]]></title>
+            <description><![CDATA[A new documentary shows the world's first gay rugby club challenging conventional perceptions.]]></description>
+            <link>https://www.bbc.co.uk/news/entertainment-arts-51734341</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/entertainment-arts-51734341</guid>
+            <pubDate>Thu, 14 Jan 2021 00:00:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How RuPaul's Drag Race UK faced Covid challenge]]></title>
+            <description><![CDATA[The queens of season two discuss coronavirus shutting production down, and how life changed for their drag.]]></description>
+            <link>https://www.bbc.co.uk/news/newsbeat-55650668</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/newsbeat-55650668</guid>
+            <pubDate>Thu, 14 Jan 2021 07:08:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Stroud GP vaccinates her father against Covid-19]]></title>
+            <description><![CDATA[A GP in Stroud has been able to vaccinate her father, and see him for the first time since March.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-gloucestershire-55638733</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/uk-england-gloucestershire-55638733</guid>
+            <pubDate>Wed, 13 Jan 2021 06:25:11 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Wonder Woman 1984: Actress Lilly Aspell reveals how a chance encounter led her to the role]]></title>
+            <description><![CDATA[Lilly Aspell got the Wonder Woman 1984 part despite never acting before and does all her own stunts.]]></description>
+            <link>https://www.bbc.co.uk/news/entertainment-arts-55639071</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/entertainment-arts-55639071</guid>
+            <pubDate>Wed, 13 Jan 2021 00:39:23 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The password guess worth $240m in bitcoin...]]></title>
+            <description><![CDATA[A programmer is trying to remember the password to unlock a digital wallet set up a decade ago.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-55645408</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/technology-55645408</guid>
+            <pubDate>Wed, 13 Jan 2021 11:46:23 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[CES 2021: Is this the world's smartest face mask?]]></title>
+            <description><![CDATA[Gaming company Razer claims to have made the world's most technologically advanced mask]]></description>
+            <link>https://www.bbc.co.uk/news/technology-55642398</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/technology-55642398</guid>
+            <pubDate>Wed, 13 Jan 2021 01:09:44 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Has coronavirus made us more ethical consumers?]]></title>
+            <description><![CDATA[Studies show shoppers on both sides of the Atlantic are more ethically and environmentally minded.]]></description>
+            <link>https://www.bbc.co.uk/news/business-55630144</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/business-55630144</guid>
+            <pubDate>Thu, 14 Jan 2021 00:11:58 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The country vaccinating younger people first]]></title>
+            <description><![CDATA[Instead of inoculating the elderly, Indonesia is focusing on working-age adults. Will it succeed?]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-55620356</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-asia-55620356</guid>
+            <pubDate>Wed, 13 Jan 2021 13:52:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How much can Joe Biden get done on the US economy?]]></title>
+            <description><![CDATA[The new US president may have more scope to make change than initially thought.]]></description>
+            <link>https://www.bbc.co.uk/news/business-55564482</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/business-55564482</guid>
+            <pubDate>Thu, 14 Jan 2021 00:11:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Evaristo de Macedo: The record-breaking Brazilian loved by Barca & Madrid]]></title>
+            <description><![CDATA[Barcelona's first Brazilian striker left for Real Madrid, managed Iraq with Saddam Hussein's son and beat Pele to a goalscoring record.]]></description>
+            <link>https://www.bbc.co.uk/sport/football/55631478</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/sport/football/55631478</guid>
+            <pubDate>Thu, 14 Jan 2021 00:01:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Huawei patent mentions use of Uighur-spotting tech]]></title>
+            <description><![CDATA[The company denies selling technology that can identify the ethnic group and plans to reword the patent.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-55634388</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/technology-55634388</guid>
+            <pubDate>Wed, 13 Jan 2021 00:27:25 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sheldon Adelson, the casino magnate who moved an embassy]]></title>
+            <description><![CDATA[Sheldon Adelson, the son of Jewish immigrants who became one of the world's richest men, dies at 87.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-47414850</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-47414850</guid>
+            <pubDate>Tue, 12 Jan 2021 15:48:10 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Viewpoint: Global media's Nigeria abductions coverage 'wrong']]></title>
+            <description><![CDATA[Novelist Adaobi Tricia Nwaubani criticises coverage of the kidnapping of schoolchildren.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-55572897</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-africa-55572897</guid>
+            <pubDate>Wed, 13 Jan 2021 00:26:58 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Manchester City 1-0 Brighton: Pep Guardiola's side back in the Premier League title race]]></title>
+            <description><![CDATA[With Manchester City just four points off the top, England midfielder Phil Foden has played a big part in getting City back in the Premier League title race.]]></description>
+            <link>https://www.bbc.co.uk/sport/football/55656122</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/sport/football/55656122</guid>
+            <pubDate>Wed, 13 Jan 2021 22:58:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tottenham Hotspur 1-1 Fulham: Ivan Cavaleiro earns a point for Premier League strugglers]]></title>
+            <description><![CDATA[Ivan Cavaleiro's late header earns Premier League strugglers Fulham a hard-fought draw against Tottenham in their hastily rearranged London derby.]]></description>
+            <link>https://www.bbc.co.uk/sport/football/55420342</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/sport/football/55420342</guid>
+            <pubDate>Wed, 13 Jan 2021 23:44:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Nets beat Knicks amid claims of Harden signing from Rockets]]></title>
+            <description><![CDATA[James Harden reportedly completes a move from Houston Rockets to Brooklyn Nets, while LeBron James and the LA Lakers win again.]]></description>
+            <link>https://www.bbc.co.uk/sport/basketball/55658704</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/sport/basketball/55658704</guid>
+            <pubDate>Thu, 14 Jan 2021 08:33:51 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[US players 'need to make sacrifices' in fight for equal pay]]></title>
+            <description><![CDATA[Former United States goalkeeper Hope Solo discusses equal pay for female footballers on The Players podcast.]]></description>
+            <link>https://www.bbc.co.uk/sport/football/55576836</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/sport/football/55576836</guid>
+            <pubDate>Thu, 14 Jan 2021 05:59:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Moment Trump impeached for second time]]></title>
+            <description><![CDATA[The US House of Representatives has voted with a trial due to begin in the Senate in the coming days.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55656219</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55656219</guid>
+            <pubDate>Wed, 13 Jan 2021 21:53:09 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Trump impeachment: Republicans defend - and some attack - president]]></title>
+            <description><![CDATA[Ten Republicans voted to impeach the president this time - but most in the party came to his defence.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55640438</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55640438</guid>
+            <pubDate>Thu, 14 Jan 2021 00:23:43 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Americans react to historic second Trump impeachment]]></title>
+            <description><![CDATA[Our voter panel is divided over the charge of incitement with Trump supporters warning it will deepen divisions.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55656995</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55656995</guid>
+            <pubDate>Thu, 14 Jan 2021 00:54:31 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Trump impeachment: What happens to impeached presidents?]]></title>
+            <description><![CDATA[Johnson, Nixon and Clinton: Mr Trump follows three US presidents who have already faced impeachment.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-50813276</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-50813276</guid>
+            <pubDate>Wed, 13 Jan 2021 21:45:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Capitol riots: Did Trump's words at rally incite violence?]]></title>
+            <description><![CDATA[Donald Trump stands accused of inciting violence that left five people dead. So what did the president say?]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-55640437</link>
+            <guid isPermaLink="true">https://www.bbc.co.uk/news/world-us-canada-55640437</guid>
+            <pubDate>Wed, 13 Jan 2021 21:49:02 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

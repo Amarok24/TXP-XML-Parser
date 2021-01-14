@@ -10,9 +10,9 @@ import { XmlReader } from "./XmlReader.ts";
 import { XmlTreeInteractive } from "./XmlTreeInteractive.ts";
 import { XmlQuery } from "./XmlQuery.ts";
 
-const offlineFile = "sample.xml";
+//const offlineFile = "sample.xml";
 //const offlineFile = "jobs_truncated.xml";
-//const offlineFile = "jobrequest.xml";
+const offlineFile = "bbc-news.rss";
 
 let textFileReader = new TextFileReader(offlineFile);
 const readSuccess = textFileReader.Fetch();
@@ -34,14 +34,14 @@ if (xmlStructure.Parse())
 	console.log(`XML tree has ${xmlStructure.tree.nodeCounter} nodes.`);
 
 	// FOR AN INTERACTIVE DEMO UNCOMMENT THIS:
-	XmlTreeInteractive.Start(xmlStructure.tree);
+	 XmlTreeInteractive.Start(xmlStructure.tree);
 
-/*
+/* 
 	let myQuery = new XmlQuery(xmlStructure.tree);
 
 	try
 	{
-		myQuery.ByXPath("/JobBatch/Job/Company/Name");
+		myQuery.ByXPath("/JobBatch/Job/Position/Title");
 		//myQuery.ResultToString();
 	} catch (error)
 	{

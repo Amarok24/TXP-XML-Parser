@@ -4,7 +4,7 @@
 	<Job Version="1.1" RequisitionNumber="11651" InternalID="10921047">
 		<Company>
 			<Name>   Deutsche Post AG  </Name>
-			<Description text="dummy description" />
+			<Description attributeText="dummy description" />
 			<Department Id="328099">
 				Heavy Logistics
 				<SubDepartment>Delivery</SubDepartment>
@@ -15,6 +15,9 @@
 				Headquarters
 			</Address>
 		</Company>
+		<Test>
+			lorem ipsum
+		</Test>
 		<Position>
 			<Title>Postbote für Pakete und Briefe</Title>
 			<Description>
@@ -49,6 +52,9 @@
 				<PostalCode>12345</PostalCode>
 			</Address>
 		</Company>
+		<Test>
+			lorem ipsum 2
+		</Test>
 		<Position>
 			<Title>Admin Position</Title>
 			<Description>
